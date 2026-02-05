@@ -1,0 +1,25 @@
+smart lunch selector agent:
+
+goal:
+Select a lunch item that fits the students budget and prefrence
+
+Memory:
+budget : 100
+prefrence: Veg
+
+tool : get_menu()
+buy_item
+
+planner:
+1.Filter veg items
+2.Sort by price
+3.try best option first
+
+Executer:
+1.call Tools
+2.Observe result
+3.Update memory
+
+failure & recovery
+1.Item is over budget
+2.Item not available

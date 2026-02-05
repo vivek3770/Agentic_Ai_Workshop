@@ -1,0 +1,66 @@
+ai-code-reviewer/
+│
+├── backend/                     # Core API service
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py              # FastAPI entrypoint
+│   │   ├── routes/
+│   │   │   ├── review.py        # Review endpoint
+│   │   │   ├── health.py        # Health checks
+│   │   ├── services/
+│   │   │   ├── llm_service.py   # LLM integration (Gemini/OpenAI/HF)
+│   │   │   ├── parser.py        # AST parsing, static analysis
+│   │   │   ├── security.py      # Security vulnerability checks
+│   │   │   ├── formatter.py     # Feedback structuring
+│   │   │   ├── scoring.py       # Severity scoring
+│   │   ├── models/
+│   │   │   ├── review_request.py
+│   │   │   ├── review_response.py
+│   │   ├── utils/
+│   │   │   ├── logger.py        # Centralized logging
+│   │   │   ├── config.py        # Env variables
+│   │   │   ├── cache.py         # Redis caching
+│   │   └── tests/
+│   │       ├── test_review.py
+│   │       ├── test_parser.py
+│   │       ├── test_security.py
+│   │
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── microservices/               # Extra services
+│   ├── notifier/                # Slack/Email notifications
+│   │   ├── main.py
+│   │   ├── utils/slack.py
+│   │   ├── utils/email.py
+│   ├── ci_integration/          # GitHub/GitLab integration
+│   │   ├── github_webhook.py
+│   │   ├── gitlab_webhook.py
+│   └── analytics/               # Collect review metrics
+│       ├── main.py
+│       ├── db.py
+│       ├── dashboards.py
+│
+├── frontend/                    # Developer UI
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── CodeEditor.jsx   # Monaco editor
+│   │   │   ├── ReviewOutput.jsx # Structured feedback
+│   │   ├── pages/
+│   │   │   ├── index.jsx
+│   │   └── utils/api.js
+│   ├── package.json
+│   └── vite.config.js
+│
+├── ci-cd/
+│   ├── github-actions.yml       # Automated pipeline
+│   ├── docker-compose.yml
+│   └── k8s-deployment.yaml      # Kubernetes deployment
+│
+├── docs/
+│   ├── architecture.md
+│   ├── api_spec.md
+│   ├── setup.md
+│   └── contribution.md
+│
+└── README.md
